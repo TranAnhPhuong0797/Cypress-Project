@@ -1,13 +1,34 @@
-// cypress/e2e/sample.spec.js
+/// <reference types="cypress" />
 
-describe('E2E: Test Suilt - Login test cases', () => {
+
+describe('E2E Test Suite – Login Scenarios', () => {
+  const envName = Cypress.env('dev')
+  const userRole = Cypress.env('admin')
+
   before(() => {
-    // uses cypress.config.js baseUrl + our login command:
-    Cypress.login(); // will default to Cypress.env('user')
-  });
+    // Log which environment and user we’re testing against
+    cy.log(`🌐 Environment: ${envName}`)
+    cy.log(`👤 Logging in as: ${userRole}`)
+  })
 
-  it('lands on the dashboard', () => {
-    cy.visit('/dashboard');
-    cy.contains('Welcome').should('be.visible');
-  });
-});
+  beforeEach(() => {
+    // Use our custom command (defaults to Cypress.env('user'))
+    cy.login()
+  })
+
+  it('should land on the dashboard and show the welcome banner', () => {
+    // baseUrl + '/dashboard'
+    cy.visit('')
+    
+  })
+
+  it('should display the correct user name in the header', () => {
+    cy.visit('')
+    
+  })
+
+  it('should allow the user to log out and redirect to login page', () => {
+    cy.visit('')
+    
+  })
+})

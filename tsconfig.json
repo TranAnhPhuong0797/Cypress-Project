@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": ["ESNext", "DOM"],
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "types": ["cypress", "node"],
+    "typeRoots": ["./node_modules/@types"],
+    "outDir": "dist"
+  },
+  "include": ["cypress/**/*.ts", "cypress.config.ts"]
+}
