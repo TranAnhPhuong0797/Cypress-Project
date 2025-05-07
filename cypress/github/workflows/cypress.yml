@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        browser: [chrome, firefox]        # run against Chrome & Firefox
+        browser: [chrome, firefox]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -36,8 +36,8 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           browser: ${{ matrix.browser }}
-          spec: '**/*.cy.ts'               # target your TS specs
-          record: false                     # set to true if using Dashboard
+          spec: '**/*.cy.ts'
+          record: false
           parallel: false
 
       - name: Upload test artifacts
@@ -48,4 +48,4 @@ jobs:
           path: |
             cypress/videos
             cypress/screenshots
-            mochawesome-report                     # if you generate HTML/json reports
+            mochawesome-report
