@@ -16,19 +16,9 @@ describe('E2E Test Suite – Login Scenarios', () => {
     cy.login()
   })
 
-  it('should land on the dashboard and show the welcome banner', () => {
+  it('TC1: Should land on the dashboard and show the welcome banner', () => {
     // baseUrl + '/dashboard'
-    cy.visit('')
-    
-  })
-
-  it('should display the correct user name in the header', () => {
-    cy.visit('')
-    
-  })
-
-  it('should allow the user to log out and redirect to login page', () => {
-    cy.visit('')
-    
+    const baseUrl = Cypress.config('baseUrl')
+    cy.visit(`${baseUrl}/web/index.php/dashboard/index`)
   })
 })

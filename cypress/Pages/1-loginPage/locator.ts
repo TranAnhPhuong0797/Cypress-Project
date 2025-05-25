@@ -1,8 +1,4 @@
 const loginUI = {
-    inputField: (fieldName) => {
-        return cy.xpath("//input[@name='"+ fieldName +"']");
-    },
-
     userName: () => {
         return cy.xpath(`//input[@name="username"]`);
     },
